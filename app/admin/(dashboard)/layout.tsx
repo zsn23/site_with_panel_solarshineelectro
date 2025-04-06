@@ -8,7 +8,7 @@ import { Inter } from "next/font/google"
 import "../../globals.css"
 import AdminSidebar from "@/components/admin/admin-sidebar"
 import AdminHeader from "@/components/admin/admin-header"
-
+import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export default function DashboardLayout({
@@ -62,8 +62,9 @@ export default function DashboardLayout({
 
       <div className="flex flex-col w-full">
         <AdminHeader user={user} />
-        <div className=" p-4 overflow-x-auto">{children}</div>
+        <div className=" p-4 overflow-x-auto">{children} <Toaster /></div>
       </div>
+      
     </div>
   )
 }

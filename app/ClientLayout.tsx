@@ -19,9 +19,9 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <CartProvider>
       {!isAdminRoute && <Header />}
-      <main>{children}</main>
+      <main>{children} <Toaster /></main>
       {!isAdminRoute && <Footer />}
-      <Toaster />
+      
     </CartProvider>
   )
 }

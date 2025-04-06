@@ -14,6 +14,7 @@ export default function ProductPage() {
   const { id } = useParams()
   const { addToCart } = useCart()
   const { toast } = useToast()
+
   const [quantity, setQuantity] = useState(1)
 
   const product = products.find((p) => p.id === id)
@@ -23,11 +24,14 @@ export default function ProductPage() {
   }
 
   const handleAddToCart = () => {
-    addToCart(product, quantity)
+    console.log("item added to cart")
     toast({
       title: "Added to cart",
       description: `${quantity} × ${product.name} added to your cart`,
     })
+    console.log(toast)
+    addToCart(product, quantity)
+   
   }
 
   return (
