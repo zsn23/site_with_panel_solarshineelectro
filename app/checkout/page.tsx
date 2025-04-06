@@ -55,14 +55,15 @@ export default function CheckoutPage() {
       description: "Thank you for your purchase. You will receive a confirmation email shortly.",
     })
 
-    clearCart()
-    router.push("/checkout/success")
-    setIsSubmitting(false)
-  }
+    // Navigate first
+router.push("/checkout/success")
+// Then clear cart after short delay
 
-  if (cart.length === 0) {
-    router.push("/cart")
-    return null
+setTimeout(() => {
+  clearCart()
+  // router.push("/cart")
+}, 5000)
+    setIsSubmitting(false)
   }
 
   return (
