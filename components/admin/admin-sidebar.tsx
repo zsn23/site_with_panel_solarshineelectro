@@ -218,16 +218,17 @@ export default function AdminSidebar() {
       </Button>
 
       {/* Admin Panel Heading - Hidden below 445px */}
-      <div
-        className={`absolute z-40 ${isMobile ? "flex" : "hidden"} ${isSmallScreen ? "hidden" : ""}`}
-        style={{ top: "18px", left: "75px" }}
-      >
-        <Link href="/admin/dashboard" className="font-bold text-xl">
-          <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
-            Admin Panel
-          </span>
-        </Link>
-      </div>
+      <div 
+  className={`absolute z-40 opacity-0 invisible min-[445px]:opacity-100 min-[445px]:visible transition-all ${isMobile ? "flex" : "hidden"} ${isSmallScreen ? "hidden" : ""}`}
+  style={{ top: "18px", left: "75px" }}
+>
+  <Link href="/admin/dashboard" className="font-bold text-xl">
+    <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
+      Admin Panel
+    </span>
+  </Link>
+</div>
+
     </>
   )
 }
